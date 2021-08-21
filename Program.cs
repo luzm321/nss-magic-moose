@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic; // namespace that enables use of List
-// using Linq;
+// using System.Linq; // namespace needed since Select (map through list) is an extension method
 
 Main();
 
@@ -71,8 +71,25 @@ void Main()
         predictions.Add("Cannot predict now.");
         predictions.Add("You may rely on it.");
 
+        // for (int i = 0; i < predictions.Count; i++)
+        // {
+        //     Random response = new Random();
+        //     int generateRandNum = response.Next(0, i);
+        //     string mooseResponse = predictions[generateRandNum];
+        //     return mooseResponse;
+        //     // Console.WriteLine($"The number is {i}");
+        // }
+
+        // List<string> answers = predictions.Select(prediction => prediction).ToList();
+
+        // int predictionsCount = answers.Count;
+        // Random response = new Random();
+        // int generateRandNum = response.Next(0, predictionsCount);
+        // string mooseResponse = predictions[generateRandNum];
+        // return mooseResponse;
+
         int predictionsCount = predictions.Count;
-        Random response = new Random();
+        Random response = new Random(); // instantiating new Random response object
         int generateRandNum = response.Next(0, predictionsCount);
         string mooseResponse = predictions[generateRandNum];
         return mooseResponse;
