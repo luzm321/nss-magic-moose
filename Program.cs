@@ -114,5 +114,26 @@ void MagicMooseSays(string question, string response)
     \_____/ /
       \____/
     ");
+    if (string.IsNullOrWhiteSpace(question)) // if user does not ask a question/prompt is null or an empty string, exit the program:
+    {
+        Console.WriteLine($@"
+              ___            ___
+          /   \          /   \
+          \_   \        /  __/
+          _\   \      /  /__
+          \___  \____/   __/
+              \_       _/
+                | @ @  \_     
+                |             See you again soon!
+              _/     /\
+              /o)  (o/\ \_
+              \_____/ /
+                \____/
+              ");
+    }
+    else // else, invoke Main() method again and execute the functions/methods inside it for user to keep asking question and moose to answer random predictions from the list:
+    {
+        Main();
+    }
 }
 
